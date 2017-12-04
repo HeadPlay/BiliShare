@@ -35,7 +35,7 @@ public interface IImageDownloader {
 
         void onSuccess(String filePath);
 
-        void onFailed(String url);
+        void onFailed(String url, int defautRes);
 
     }
 }
