@@ -116,6 +116,5 @@ public class MainActivity extends BaseShareableActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 }
