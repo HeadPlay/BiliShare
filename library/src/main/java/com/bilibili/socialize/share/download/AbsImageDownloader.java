@@ -37,14 +37,14 @@ public abstract class AbsImageDownloader implements IImageDownloader {
         if (TextUtils.isEmpty(imageUrl)) {
             Log.d(TAG, "null image url");
             if (listener != null) {
-                listener.onFailed(imageUrl);
+                listener.onFailed(imageUrl, 0);
             }
         } else {
             String filePath = createFileIfNeed(context, imageUrl, targetFileDirPath);
             if (TextUtils.isEmpty(filePath)) {
                 Log.e(TAG, "create image file failed");
                 if (listener != null) {
-                    listener.onFailed(imageUrl);
+                    listener.onFailed(imageUrl,0);
                 }
                 return;
             }

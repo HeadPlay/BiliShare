@@ -136,7 +136,7 @@ public class DefaultImageDownLoadTask extends Thread {
     private void onDownloadFailed() {
         Log.d(TAG, "image download failed");
         if (mDownLoadListener != null) {
-            mDownLoadListener.onFailed(mDownloadUrl);
+            mDownLoadListener.onFailed(mDownloadUrl, 0);
         }
     }
 

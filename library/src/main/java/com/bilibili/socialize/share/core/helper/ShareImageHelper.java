@@ -274,12 +274,15 @@ public class ShareImageHelper {
                         @Override
                         public void onFailed(String url, int defaultRes) {
                             Log.d(TAG, String.format("download image: failed: (%s)", url));
-//                            if (mCallback != null) {
-//                                mCallback.onProgress(R.string.bili_share_sdk_compress_image_failed);
-//                                mCallback.onImageDownloadFailed();
-//                            }
-                            image.setResId(defaultRes);
-                            task.run();
+
+                            if (defaultRes != 0) {
+                                image.setResId(defaultRes);
+                                task.run();
+                            } else if (mCallback != null) {
+                                mCallback.onProgress(R.string.bili_share_sdk_compress_image_failed);
+                                mCallback.onImageDownloadFailed();
+                            }
+
                         }
                     });
         }

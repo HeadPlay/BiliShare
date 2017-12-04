@@ -74,13 +74,13 @@ public class ShareFrescoImageDownloader extends AbsImageDownloader {
                 }
 
                 if (listener != null)
-                    listener.onFailed(imageUrl);
+                    listener.onFailed(imageUrl, 0);
             }
 
             @Override
             protected void onFailureImpl(DataSource<CloseableReference<CloseableImage>> dataSource) {
                 if (listener != null)
-                    listener.onFailed(imageUrl);
+                    listener.onFailed(imageUrl, 0);
             }
 
         }, UiThreadImmediateExecutorService.getInstance());
